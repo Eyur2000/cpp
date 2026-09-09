@@ -15,12 +15,9 @@ int main(){
     sort(arr,arr+n);
     sort(brr.begin(),brr.end());
     for(int i=0;i<n;i++){
-        for(int j=0;j<brr.size();j++){
-            if(arr[i]+k>=brr[j]&&arr[i]-k<=brr[j]){
-                brr.erase(brr.begin()+j);
-                ans++;
-                break;
-            }
+        if(arr[i]+k>=brr[j]&&arr[i]-k<=brr[j]){
+            brr.erase(brr.begin()+j);
+            ans++;
         }
     }
     cout<<ans;

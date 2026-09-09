@@ -1,11 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-   vector<int>vt={1,2,3,4,5};
-   vt.erase(vt.begin(),vt.begin()+1);
-   for(auto i:vt){
+   int n=5;
+   vector<int> vt;
+   vector<int> pvt(n+1,0);
+   for(int i=0;i<n;i++){
+      vt.push_back(1);
+      vt.push_back(2);
+      vt.push_back(3);
+      vt.push_back(4);
+      vt.push_back(5);
+   }
+   for(int i=0;i<n;++i){
+      pvt[i+1] = pvt[i] + vt[i];
+   }
+   for(auto i:pvt){
       cout<<i<<' ';
-   }   
+   }
+   
 }/*
 
 
