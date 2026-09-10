@@ -2,24 +2,28 @@
 using namespace std;
 using ll = long long;
 int main(){
-    int n,m,k,ans=0;
-    cin>>n>>m>>k;
-    int arr[n];
-    vector<int>brr(m);
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
+    int x=6;
+    vector<int>vt;
+    //輸入數字
+    vt.push_back(5);
+    vt.push_back(9);
+    vt.push_back(1);
+    vt.push_back(7);
+    vt.push_back(6);
+    vt.push_back(4);
+    
+    sort(vt.begin(),vt.end());//排一遍
+
+    int left=0,right=vt.size()-1;
+    while (left<=right){
+        int mid=(left+right)/2;
+        if(vt[mid]>x)right=mid-1;
+        else left=mid+1;
     }
-    for(int i=0;i<m;i++){
-        cin>>brr[i];
-    }
-    sort(arr,arr+n);
-    sort(brr.begin(),brr.end());
-    for(int i=0;i<n;i++){
-        if(arr[i]+k>=brr[j]&&arr[i]-k<=brr[j]){
-            brr.erase(brr.begin()+j);
-            ans++;
-        }
-    }
-    cout<<ans;
+    cout<<right;
+    
+
+    
+
 }
-//run 20*20 
+
