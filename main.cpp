@@ -1,25 +1,20 @@
 #include <bits/stdc++.h>//
 using namespace std;
 using ll = long long;
-int main(){
+int id=0;
+int getID(long long x){
+  return lower_bound(id.begin(),id.end(),x)-id.begin()+1;
+}
 
-    int x;
-    cin>>x;
-    
-    vector<int>vt={1,5,4,6,9,7};
-    int left=0,right=vt.size()-1;
-    
-    while (left<=right){
-        int mid=(left+right)/2;
-        if(vt[mid]>x)right=mid-1;
-        else if(vt[mid]<x)left=mid+1;
-        else {
-            cout<< mid;
-            return 0;
-        }
-        
-    }
-    cout<<left;
-   
+
+int main(){
+    vector<int> a{2,345245,54345,653,25656253,0,34};
+    vector<int>b;
+    sort(a.begin(),a.end());
+    int input;
+    cin>>input;
+    id=input;
+
+
     return 0;
 }
