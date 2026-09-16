@@ -12,19 +12,22 @@ int main(){
     for(int i=0;i<m;i++){
         cin>>house[i];
     }
+    sort(vt.begin(),vt.end());
     sort(house.begin(),house.end());
     for(int i=0;i<n;i++){
         int left=0,right=house.size()-1;
         while(left<=right){
-            int mid = left+right/2;
-            if(house[mid]>vt[i])right=mid-1;
-            else if(house[mid]<vt[i])left=mid+1;
-            else {
-                ans++;
-                house.erase(house.begin()+mid);
-            }
+            
         }
     }
-    cout<<ans;
+    cout<<ans<<endl;
+    for(auto i:house){
+        cout<<i<<' ';
+    }
+    cout<<endl;
+    for(auto i:vt){
+        cout<<i<<' ';
+    }
+    
 }
 //1000000000
