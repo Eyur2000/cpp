@@ -1,32 +1,33 @@
 #include <bits/stdc++.h>//
 using namespace std;
 using ll = long long;
+
 int main(){
-    int n,m,k,ans=0;
-    cin>>n>>m>>k;
+    int n,m;
+    cin>>n>>m;
     vector<int>vt(n);
-    vector<ll>house(m);
+    vector<int>q(m);
     for(int i=0;i<n;i++){
         cin>>vt[i];
     }
     for(int i=0;i<m;i++){
-        cin>>house[i];
+        cin>>q[i];
     }
-    sort(vt.begin(),vt.end());
-    sort(house.begin(),house.end());
-    for(int i=0;i<n;i++){
-        int left=0,right=house.size()-1;
-        while(left<=right){
-            
+    int now=0,stp=0;
+    for(int i=0;i<m;i++){
+        while (now<=q[i])
+        {
+            now+=vt[stp];
+            stp=(stp+1)%n;
         }
-    }
-    cout<<ans<<endl;
-    for(auto i:house){
-        cout<<i<<' ';
-    }
-    cout<<endl;
-    for(auto i:vt){
-        cout<<i<<' ';
+        if(i==m-1){
+            cout<<stp;
+        }else{
+            
+            stp=(stp+1)%n;
+            now=0;
+        }
+        
     }
     
 }
