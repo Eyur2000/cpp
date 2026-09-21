@@ -1,0 +1,8 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+   vector<int>vt={1,1,3,6,4,4,2,8};
+   vt.erase(unique(vt.begin(),vt.end()),vt.end());//抓重複的內容unique
+   for(auto i:vt)cout<<i<<' ';
+   
+}
