@@ -2,25 +2,37 @@
 using namespace std;
 using ll = long long;
 int main(){
-    int n,m;
-    cin>>n>>m;
-    multiset<int>st;
-    vector<int>people(m);
-    int tmp;
-    for(int i=0;i<n;i++){
-        cin>>tmp;
-        st.insert(tmp);
+    multiset<char>st;
+    string str;
+    cin>>str;
+    for(int i=0;i<str.size();i++){
+        st.emplace(str[i]);
     }
-    for(int i=0;i<m;i++){
-        cin>>people[i];
+    for(int i=0;i<str.size();i++){
+        if(str[i]=='('){
+            if(st.count('(')!=st.count(')')){
+                cout<<"Invalid";
+                return 0;
+            }
+        }
+        else if(str[i]=='['){
+            if(st.count('[')!=st.count(']')){
+                cout<<"Invalid";
+                return 0;
+            }
+        }
+        else if(str[i]=='{'){
+            if(st.count('{')!=st.count('}')){
+                cout<<"Invalid";
+                return 0;
+            }
+        }
     }
-    for(int i=0;i<m;i++){
-        auto it = st.lower_bound(people[i]);
-        
-    }
-    
+    cout<<"Valid";
+    return 0;
 }
 /*
+
 5 3
 5 3 7 8 5
 4 8 3
