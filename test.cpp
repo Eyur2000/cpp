@@ -7,7 +7,6 @@ int main(){
    bt<<=1^0;
    cout<<bt<<endl;
    
-
    cout<<bt;
 }/*
 
