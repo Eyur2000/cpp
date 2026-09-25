@@ -1,14 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
-   bitset<3>bt=0;
-   bt|=1;
-   cout<<bt<<endl;
-   bt<<=1^0;
+   int n;
+   cin>>n;
+   vector<bool>vt;
+   
    cout<<bt<<endl;
    
-
-   cout<<bt;
 }/*
 
 00
@@ -21,6 +19,15 @@ int main(){
 01
 11
 10
+
+000
+001
+011
+010
+
+
+
+
 
 1011
 00001
