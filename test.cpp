@@ -1,14 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 int main(){
-   bitset<3>bt=0;
-   bt|=1;
-   cout<<bt<<endl;
-   bt<<=1^0;
-   cout<<bt<<endl;
-   
-   cout<<bt;
-}/*
+   int n=5;
+   while(n--){
+      cout<<"Hello"<<endl;
+   }
+}
+
+/*
+
+mu^2 =mu*mu
+
+
 
 00
 01
