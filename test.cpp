@@ -8,13 +8,12 @@ int main(){
    st.insert(1);
    st.insert(1);
    st.insert(2);
-   st.insert(6);
+   st.insert(5);
    st.insert(2);
-   auto tmp =st.lower_bound(7);
-   if(tmp==st.end()){
-      cout<<"bad";
+   auto ed = st.lower_bound(3);
+
+   for(auto i=st.begin();i!=ed;++i){
+      cout<<*i<<' ';
    }
-   for(auto i:st){
-      cout<<i<<' ';
-   }
+   
 }
