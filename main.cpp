@@ -2,33 +2,14 @@
 using namespace std;
 
 int main(){
-    int  n,m;
-    cin>>n>>m;
-    multiset<int>st;
-    vector<int>vt(n);
-    for(int i=0;i<n;i++){
-        cin>>vt[i];
-        st.emplace(vt[i]);
-    }
-    sort(vt.begin(),vt.end());
-    while(m--){
-        int tmp;
-        cin>>tmp;
-        if(st.count(tmp)==true){
-            cout<<tmp<<endl;
-            int a =  st.count(st.find(2));
-            
-
-        }else{
-            int left=0,right=vt.size()-1;
-            while(left<=right){
-                int mid=(left+right)/2;
-                if(vt[mid]<tmp)left=mid+1;
-                else if(vt[mid]>tmp)right=mid-1;
-            }
-            cout<<vt[left]<<endl;
-            st.erase(vt[left]);
-            vt.erase(vt.begin()+left);
+    int n;
+    cin>>n;
+    multiset<long long>st;
+    while(n--){
+        int a,b;
+        cin>>a>>b;
+        for(int i=a;i<=b;i++){
+            st.emplace(i);
         }
     }
 }
