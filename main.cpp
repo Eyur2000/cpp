@@ -1,21 +1,19 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+using ll = long long;
 int main(){
-    int n;
-    cin>>n;
-    multiset<long long>st;
-    while(n--){
-        int a,b;
-        cin>>a>>b;
-        for(int i=a;i<=b;i++){
-            st.emplace(i);
-        }
+    ios::sync_with_stdio(0); cin.tie(0);cout.tie(0);
+    int in;
+    
+    while (cin>>in){
+        bitset<2>bt;
     }
+    
+
 }
 //Mental Abuse To Human
 /*
-
+0.2s 85ms
 int n,m;
     cin>>n>>m;
     vector<int>arr(n),vt(n);

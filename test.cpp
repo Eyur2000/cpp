@@ -2,18 +2,14 @@
 using namespace std;
 
 int main(){
+   string str="Hello";
+   do
+   {
+      for(auto i:str)cout<<i;
+      cout<<endl;
+   } while (next_permutation(str.begin(),str.end()));
    
-   multiset<int>st;
-   st.insert(1);
-   st.insert(1);
-   st.insert(1);
-   st.insert(2);
-   st.insert(5);
-   st.insert(2);
-   auto ed = st.lower_bound(3);
-   if(st.lower_bound(0)==st.begin()||st.lower_bound(0)==st.end()){
-      cout<<"bad";
-   }
+   
 }
 /*
 
