@@ -4,29 +4,12 @@ using namespace std;
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
-    int n,m,k,tmp,ans=0;
-    cin>>n>>m>>k;
-    multiset<int>mst,pst;
-    for(int i=0;i<n;i++){
-        cin >> tmp;
-        mst.emplace(tmp);
+    int n;
+    cin>>n;
+    while (n--){
+        
     }
-    for(int i=0;i<m;i++){
-        cin >> tmp;
-        pst.emplace(tmp);
-    }
-    auto i=mst.cbegin();
-    for(auto &p:pst){
-        if(i==mst.cend()){
-            cout<<ans;
-            break;
-        }else if(*i<p){
-            ++i;
-        }else if(*i==p){
-            ++ans;
-            ++i;
-        }
-    }
+    
     
 }
 //Mental Abuse To Human

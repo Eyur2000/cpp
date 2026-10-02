@@ -1,10 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+
 int main(){
-   int n=5;
-   n=n%2;
-   n=n&2;
+   int n;
+   while(cin>>n){
+      vector<list<int>>vt;
+      for(int i=0;i<n;i++){
+         vt[i].push_back(i);
+      }
+      string cd;
+      while(cin>>cd){
+         if(cd=="quit"){
+            break;
+         }else if(){
+
+         }else if()
+
+      }
+   }
+   
    
    
 }
