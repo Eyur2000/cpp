@@ -1,19 +1,37 @@
 #include <bits/stdc++.h>
 using namespace std;
-using ll = long long;
+
 int main(){
-    ios::sync_with_stdio(0); cin.tie(0);cout.tie(0);
-    int in;
-    
-    while (cin>>in){
-        bitset<2>bt;
+    ios::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+    int n,m,k,tmp,ans=0;
+    cin>>n>>m>>k;
+    multiset<int>mst,pst;
+    for(int i=0;i<n;i++){
+        cin >> tmp;
+        mst.emplace(tmp);
+    }
+    for(int i=0;i<m;i++){
+        cin >> tmp;
+        pst.emplace(tmp);
+    }
+    auto i=mst.cbegin();
+    for(auto &p:pst){
+        if(i==mst.cend()){
+            cout<<ans;
+            break;
+        }else if(*i<p){
+            ++i;
+        }else if(*i==p){
+            ++ans;
+            ++i;
+        }
     }
     
-
 }
 //Mental Abuse To Human
 /*
-0.2s 85ms
+
 int n,m;
     cin>>n>>m;
     vector<int>arr(n),vt(n);
