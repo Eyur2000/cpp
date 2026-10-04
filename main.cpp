@@ -1,14 +1,29 @@
 #include <bits/stdc++.h>
 using namespace std;
+using ll=long long;
+
 
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
-    int n;
+    int n,mx=INT_MIN,ans=0;
     cin>>n;
+    vector<pair<int,int>>vt;
     while (n--){
-        
+        int l,r;
+        cin>>l>>r;
+        vt.push_back(make_pair(l,1));
+        vt.push_back(make_pair(r,-1));
     }
+    sort(vt.begin(),vt.end());
+    for(auto i:vt){
+        ans+=i.second;
+        mx=max(mx,ans);
+    }
+    cout<<mx;
+    
+    
+    
     
     
 }
