@@ -6,22 +6,28 @@ using ll=long long;
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
-    int n,tmp;
+    int n,ans=0;
     cin>>n;
-    map<int,int>mp;
-    while (n--){
-        cin>>tmp;
-        if(!mp.count(tmp)){
-            mp.insert({tmp,1});
-        }else{
-            mp[tmp]++;
-
+    vector<int>vt(n);
+    for(int i=0;i<n;i++){
+        cin>>vt[i];
+    }
+    for(int i=1;i<=n;i++){
+        for(int j=0;j<n;j++){
+            if(vt[j]==i){
+                if(j+1==i){
+                    break;
+                }else{
+                    swap(vt[j],vt[i-1]);
+                    ++ans;
+                }
+            }
         }
     }
-    
-    for(auto i:mp){
-        cout<<i.first<<' '<<i.second<<endl;
-    }
+    cout<<ans;
+
+
+
     return 0; 
 }
 //Mental Abuse To Human
