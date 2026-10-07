@@ -6,29 +6,38 @@ using ll=long long;
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
-    int n,ans=0;
-    cin>>n;
-    vector<int>vt(n);
-    for(int i=0;i<n;i++){
-        cin>>vt[i];
+    int n,m;
+    cin>>n>>m;
+    vector<int>vt(n+1);
+    vector<int>S(n+1);
+    for(auto &i:vt){
+        cin>>i;
     }
-    for(int i=1;i<=n;i++){
-        for(int j=0;j<n;j++){
-            if(vt[j]==i){
-                if(j+1==i){
-                    break;
-                }else{
-                    swap(vt[j],vt[i-1]);
-                    ++ans;
-                }
+    S[0]=vt[0];
+    
+    for(int i=1;i<n;i++){
+        S[i]=S[i-1]+vt[i];
+    }
+    while (m--)
+    {
+        int l,r,a,b,k,ans;
+        cin>>l>>r>>a>>b;
+        int left=l-1,right=r-1;
+        k=left;
+        while (true){
+            if((S[k]-S[l-1])*(a+b)<(S[r]-S[l-1])*a){
+                ans=k;
+                k++;
+            }else{
+                cout<<k<<endl;
+                break;
             }
+            
         }
+        
+        
     }
-    cout<<ans;
-
-
-
-    return 0; 
+    
 }
 //Mental Abuse To Human
 /*
