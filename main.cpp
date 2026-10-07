@@ -9,38 +9,31 @@ int main(){
     int n,m;
     cin>>n>>m;
     vector<int>vt(n+1);
-    vector<int>S(n+1);
-    for(auto &i:vt){
-        cin>>i;
+    vector<long long>S(n+1);
+    S[0]=0;
+    for(int i=0;i<n;i++){
+        cin>>vt[i];
+        S[i+1]+=vt[i]+S[i];
     }
-    S[0]=vt[0];
-    
-    for(int i=1;i<n;i++){
-        S[i]=S[i-1]+vt[i];
-    }
-    while (m--)
-    {
-        int l,r,a,b,k,ans;
+    while (m--){
+        int l,r,a,b,k,ans=0;
         cin>>l>>r>>a>>b;
-        int left=l-1,right=r-1;
-        k=left;
-        while (true){
-            if((S[k]-S[l-1])*(a+b)<(S[r]-S[l-1])*a){
-                ans=k;
-                k++;
-            }else{
-                cout<<k<<endl;
-                break;
+        int left=l,right=r;
+        while (left<=right){
+            k=(left+right)/2;
+            if((S[k-1]-S[l-1])*(a+b)<(S[r]-S[l-1])*a){
+                left=k+1;
+            }
+            else if((S[k]-S[l-1])*(a+b)>=(S[r]-S[l-1])*a){
+                right=k-1;
+                
             }
             
         }
-        
-        
+        cout<<right<<endl;
     }
+    
     
 }
 //Mental Abuse To Human
-/*
-    4 7
-    1 2 3 4
-*/
+//lower_bod
