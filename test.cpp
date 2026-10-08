@@ -3,27 +3,20 @@ using namespace std;
 using ll=long long;
 
 int main(){
-   int n,tmp,mx=0,mx_num=0,ans=0;
-   cin>>n;
-   map<int,int>mp;
-   for(int i=0;i<n;i++){
-      cin>>tmp;
-      if(mp.count(tmp)){
-         mp.insert({tmp,1});
-      }else{
-         mp[tmp]++;
-         if(mp[tmp]>mx){
-            mx_num=tmp;
-            mx++;
-         }
+   vector<int>vt={1,2,3,4,4,5,6};
+   int left=0,right=vt.size()-1,a;
+   while (left<=right){
+      int mid=left+(right-left)/2;
+      if(vt[mid]==4){
+         a=mid;
+         left=mid+1;
       }
+      else if(vt[mid]<4)left=mid+1;
+      else if(vt[mid]>4)right=mid-1;
+      
    }
-   for(auto &i:mp){
-      if(i.first!=mx_num){
-         ans+=(abs(mx_num-i.first))*i.second;
-      }
-   }
-   cout<<ans;
+   cout<<a;
+   
 
    
    
