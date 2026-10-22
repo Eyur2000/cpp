@@ -3,32 +3,33 @@ using namespace std;
 using ll=long long;
 
 int main(){
-   vector<int>vt={1,2,3,4,4,5,6};
-   int left=0,right=vt.size()-1,a;
-   while (left<=right){
-      int mid=left+(right-left)/2;
-      if(vt[mid]==4){
-         a=mid;
-         left=mid+1;
+   int n;
+   cin>>n;
+   cin.ignore();
+   string in;
+   vector <int>ans;
+   for(int i=0;i<n;i++){
+      getline(cin,in);
+      stringstream str(in);
+      int total=0,sz=0,num=0;
+      while (str>>num){
+         total+=num;
+         sz++;
       }
-      else if(vt[mid]<4)left=mid+1;
-      else if(vt[mid]>4)right=mid-1;
-      
+      ans.push_back(total/sz);
    }
-   cout<<a;
-   
-
-   
+   for(auto &i:ans){
+      cout<<i<<' ';
+   }
    
    
 }
 /*
+3
+30 60 90 20
+60 76 67 87 90
+10 20 30
 
-   for(auto i=st.begin();i!=ed;++i){
-      cout<<*i<<' ';
-   }
-   cout<<endl;
-   cout<<st.count(1);
 
 
 */

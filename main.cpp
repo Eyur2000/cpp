@@ -1,28 +1,33 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll=long long;
-
-
+struct num{
+    int math=0;
+    int ch=0;
+    int eng=0;
+    int sc=0;
+    int st=0;
+};
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
-    int n,m,a,b,ans=0;
-    cin>>n>>m;
-    vector<long long>t(n);
-    vector<pair<long long,long long>>vt(m);
-    for (auto &i:t){
-        cin>>i;
+    vector<int>vt;
+    for(int i=0;i<5;i++){
+        int tmp;
+        cin>>tmp;
+        vt.push_back(tmp);
     }
-    sort(t.begin(),t.end());
-    for (auto &i:vt){
-        cin>>i.first>>i.second;
+    for(auto i:vt){
+        cout<<i;
     }
-    sort(vt.begin(),vt.end(),[](pair<long,long>a,pair<long,long>b){
-        return a.second>b.second;
-    });
-    
-    cout<<ans;
 }
+/*
+20 60 38 70 48
+35 96 8  
+86 46 37 37 
+
+
+*/
 //Mental Abuse To Human
 //lower_bod
 /*
