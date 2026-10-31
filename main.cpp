@@ -1,46 +1,48 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll=long long;
-struct num{
-    int math=0;
-    int ch=0;
-    int eng=0;
-    int sc=0;
-    int st=0;
+//Mental Abuse To Human
+struct music{
+    int ni;
+    int l;
+    int r;
+    int i;
 };
-int main(){
+int main() {
     ios::sync_with_stdio(0);
     cin.tie(0);cout.tie(0);
-    vector<int>vt;
-    for(int i=0;i<5;i++){
-        int tmp;
-        cin>>tmp;
-        vt.push_back(tmp);
+    int n,m,ct,x;
+    cin>>n>>m;
+    vector<music>vt(n);
+    for(int i=0;i<n;i++){
+        cin>>vt[i].ni>>vt[i].l>>vt[i].r;
+        vt[i].i=i+1;
     }
-    for(auto i:vt){
-        cout<<i;
+    sort(vt.begin(),vt.end(),[](music a,music b){
+        return a.ni<b.ni;
+    });
+    for(int i=0;i<m;i++){
+        cin>>ct>>x;
+        if(x<vt[i].l||x>vt[i].r){
+            if(i==m-1){
+                cout<<"Miss";
+            }else{
+                cout<<"Miss"<<'\n';
+            }
+        }else{
+            if(abs(ct-vt[i].ni)<=40){
+                cout<<vt[i].i<<' '<<"Perfect";
+            }else if(abs(ct-vt[i].ni)<=75){
+                cout<<vt[i].i<<' '<<"Good";
+            }else if(abs(ct-vt[i].ni)<=90){
+                cout<<vt[i].i<<' '<<"Bad";
+            }
+            if(i<=m-2){
+                cout<<'\n';
+            }
+        }
     }
 }
 /*
-20 60 38 70 48
-35 96 8  
-86 46 37 37 
 
-
-*/
-//Mental Abuse To Human
-//lower_bod
-/*
-int left=0,right=vt.size()-1,mid,tmp;
-        cout<<"fd:"<<i<<' ';
-        while (left<=right){
-            mid=left+(right-left)/2;
-            
-        }
-
-3 9
-7 8
-4 6
-5 6
-2 5
 */
